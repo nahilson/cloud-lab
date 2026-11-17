@@ -3,12 +3,13 @@ pipeline {
     stages {
         stage("Checkout") {
             steps {
-                git url: "https://github.com/nahilson/cloud-lab.git", branch:
+                git url: "https://github.com/nahilson/cloud-lab.git", branch: "main"
+            }
         }
-    }
-    stage("Build") {
-        steps {
-            sh "docker build -t myflask:test ."
+        stage("Build") {
+            steps {
+                sh "docker build -t myflask:test ."
+            }
         }
     }
 }
